@@ -5,19 +5,7 @@ let followingNumber = "";
 let newNumber = number + 1;
 
 while (counter < 10) {
-  if (newNumber % 2 === 0) {
-    followingNumber === ""
-      ? (followingNumber += `${c}:${newNumber}`)
-      : (followingNumber += `, ${c}:${newNumber}`);
-    counter++;
-    c++;
-  } else if (newNumber % 3 === 0) {
-    followingNumber === ""
-      ? (followingNumber += `${c}:${newNumber}`)
-      : (followingNumber += `, ${c}:${newNumber}`);
-    counter++;
-    c++;
-  } else if (newNumber % 5 === 0) {
+  if (newNumber % 2 === 0 || newNumber % 3 === 0 || newNumber % 5 === 0) {
     followingNumber === ""
       ? (followingNumber += `${c}:${newNumber}`)
       : (followingNumber += `, ${c}:${newNumber}`);

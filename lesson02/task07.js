@@ -1,5 +1,5 @@
 let a = 0;
-let b = 3;
+let b = 5;
 sum = "";
 for (let i = 1; i <= b; i++) {
   if (sum === "") {
