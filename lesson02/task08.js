@@ -1,4 +1,4 @@
-let n = 4;
+let n = 3;
 let result = "";
 let start = n - 1;
 

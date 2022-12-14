@@ -1,4 +1,4 @@
-let number = 1;
+let number = 999;
 let counter = 0;
 let c = 1;
 let followingNumber = "";
