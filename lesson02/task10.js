@@ -1,17 +1,13 @@
+let a = 2;
 let number = 6;
 
-if (number % 3 === 0) {
-  if (number === 3) {
-    console.log("simple number !");
-  } else {
-    console.log("smart number");
+let isPrime = true;
+
+for (let i = a; i < number - 1; i++) {
+  if (number % i === 0) {
+    isPrime = false;
+    break;
   }
-} else if (number % 2 === 0) {
-  if (number === 2) {
-    console.log("simple number !");
-  } else {
-    console.log("smart number");
-  }
-} else {
-  console.log("simple number !");
 }
+
+console.log(`The number is prime ${isPrime}`);
