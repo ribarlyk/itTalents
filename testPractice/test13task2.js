@@ -7,38 +7,38 @@
 let string =
     "Today is a good day for test. The sun is shining. The students are happy. The birds are blue.";
 
-function stringManipulate(str) {
-    let sentence = "";
-    let longestSentence = "";
-    let longestWord = "";
-    let longestWordSentence = "";
+function stringManipulate(
+    str,
+    sentence = "",
+    longestSentence = "",
+    longestWord = "",
+    longestWordSentence = ""
+) {
     let array = str.split(".");
     let sentenceNumber = array.length - 1;
 
     for (let i = 0; i < array.length - 1; i++) {
         sentence = array[i].trim();
-
         if (sentence.length > longestSentence.length) {
-            longestSentence = sentence + ".";
+            longestSentence = sentence;
         }
 
         let words = sentence.split(" ");
+        let longest = words.reduce((a, b) => (a.length < b.length ? b : a), "");
 
-        for (let j = 0; j < words.length; j++) {
-            for (let z = 0; z < words[j].length; z++) {
-                let word = words[j].trim();
-
-                if (word.length > longestWord.length) {
-                    longestWord = words[j];
-                    longestWordSentence = words.join(" ") + ".";
-                }
-            }
+        if (longest.length > longestWord.length) {
+            longestWord = longest;
+            longestWordSentence = words.includes(longestWord)
+                ? words.join(" ")
+                : "";
         }
     }
 
-    console.log(`Sentence with Longest word: ${longestWordSentence}`);
-    console.log(`Longest sentence: ${longestSentence}`);
-    console.log(`Sentences in input: ${sentenceNumber}`);
+console.log(
+`Sentence with Longest word: ${longestWordSentence}
+Longest sentence: ${longestSentence}
+Sentences in input: ${sentenceNumber}`
+);
 }
 
 stringManipulate(string);
